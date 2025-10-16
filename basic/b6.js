@@ -45,4 +45,10 @@ console.log(typeof bigNumber);//print undefined
 console.log(typeof outsidetemp);//object but it is null 
 console.log(typeof id)//print symbol data type
 
+//memory type 
+//stack use(primitive) 
+// is mai aik copy milti hai
+//heap(non-primitive)
+// is mai reference atah hai
+
 
