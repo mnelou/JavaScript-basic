@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>html Events</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing image</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            id="photoshop"
+            src="https://thvnext.bing.com/th/id/OIP.9JcGO8JV8VzPjg7lkVqXVwHaFv?o=7&cb=12rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="japan"
+            src="https://tse4.mm.bing.net/th/id/OIP.LLay-3EExNcHIHiGw3aRMQHaLI?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="river"
+            src="https://tse4.mm.bing.net/th/id/OIP.hrq7X06ufwAFYVzUkCUakgHaF7?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="https://tse4.mm.bing.net/th/id/OIP.Tbl2uFeNce50cQ5IrQHcNQHaFj?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="prayer"
+            src="https://tse3.mm.bing.net/th/id/OIP.tjtrk62dROo_jzB7TBIVUQHaFk?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <a style="color: aliceblue" id="google" href="https://google.com"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    //attachEvent()
+    // jQuery-on
+
+    //type,timestamp,defaultprevented,
+    // target,toElement, srcElement,
+    //currentTarget,clientX,clientY,screenX,//screenY ,altkey,ctrlkey,shiftkey,keyCode
+
+    // document.getElementById('owl').onclick=function(){
+    //   alert("owl clicked")
+    // }
+
+    //best approaches
+//     document.getElementById('images').addEventListener(
+//       'click',
+//       function (e) {
+//         console.log('clicked inside the ul');
+//         alert('all clicked g');
+//       },
+      
+//     );
+
+//     document.getElementById('owl').addEventListener(
+//       'click',
+//       function (e) {
+//         // console.log(e);
+//         alert('owl clicked g');
+//         //use for not go the bubble to parent if use e.stopPropagation
+//         e.stopPropagation();
+//       },
+//       true
+//     );
+// document.getElementById('google').addEventListener('click',function(e){
+//   console.log("google clicked");
+//   e.preventDefault();
+//   e.stopPropagation();
+// },false)
+document.querySelector('#images').addEventListener('click',function(e){
+  console.log(e.target);
+  if(e.target.tagName==='IMG'){
+    console.log(e.target.id);
+    let removeIt=e.target.parentNode
+   removeIt.remove()
+  }
+  
+//removeIt.parentNode.removeChild(removeIt)
+})
+
+  </script>
+</html>
